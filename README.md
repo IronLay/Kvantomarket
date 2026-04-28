@@ -9,7 +9,7 @@ Django-приложение для покупки школьной атрибу�
 
 | Главная страница | Корзина | Админ-панель |
 |-----------------|---------|---------------|
-| ![Главная](screenshots/main_screenshot.png) | ![Корзина](screenshots/cart_screenshot.png) | ![Админка](screenshots/item_screenshot.png) |
+| ![Главная](screenshots/main_screenshot.png) | ![Корзина](screenshots/cart_screenshot.png) | ![Админка](screenshots/itemadding_screenshot.png) |
 
 
 ## 🚀 Функционал
