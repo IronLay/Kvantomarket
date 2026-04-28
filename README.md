@@ -6,9 +6,11 @@ Django-приложение для покупки школьной атрибу�
 ---
 
 ## 📸 Скриншоты
-
+## Главная
 ![Главная](screenshots/main_screenshot.png) 
+## Корзина
 ![Корзина](screenshots/cart_screenshot.png) 
+## Админка
 ![Админка](screenshots/itemadding_screenshot.png) 
 
 
