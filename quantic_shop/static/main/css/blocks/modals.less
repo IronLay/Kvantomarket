@@ -1,0 +1,191 @@
+//main: ../style.less
+.modals
+{
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+    background-color: fade(@black, 80%);
+    position: fixed;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    &.show
+    {
+        display: flex;
+    }
+}
+
+.modals_dialog
+{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+    overflow: auto;
+    background-color: white;
+    &--sm
+    {
+        max-width: 900px;
+    }
+}
+
+.modal_work_prewiew
+{
+    width: 65%;
+    position: relative;
+    overflow: hidden;
+}
+.modal_work_content
+{
+    position: relative;
+    width: 35%;
+    padding: 3.4rem 6.6rem 1.2rem 1.7rem;
+
+
+}
+.modals_work
+{
+    position: relative;
+    display: flex;
+}
+
+.modal_img
+{
+   position: absolute; 
+   top:50%;
+   left:50%;
+   z-index: 1;
+
+   transform: translate3d(-50%, -50%,0);
+}
+
+.modal_worh_title
+{
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+.modal_work_info
+{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.modal_work_header
+{
+   margin-bottom: 30px; 
+}
+
+.modals_client
+{
+    font-weight: bold;
+}
+.modal_work_text
+{
+    margin-bottom: 5rem;
+}
+
+.modal_close
+{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+
+    transition: transform .2s linear;
+    &:hover{
+        transform: rotate(65deg);
+    }
+}
+
+.modal_work_footer
+{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 0 27px 1rem;
+}
+.modal_work_btn
+{
+    min-width: 170px;
+    padding: 20px 27px;
+    cursor: pointer;
+    background: none;
+    border: 3px solid #0039A6;
+    border-radius: 30px;
+    padding: 0;
+    font-size: 14px;
+    color: black;
+    text-transform: uppercase;
+    transition: background-color .2s linear, color .2s linear, box-shadow .2s linear;
+
+    &:hover
+    {
+        background-color: #0039A6;
+        color: white;
+
+        box-shadow: 2px 2px 10px fade(grey, 24%);
+    }
+}
+.modal_resume_content
+{
+    padding: 5rem 1rem;
+}
+
+.modal_title_resume
+{
+  
+    margin-bottom: 3rem;
+    font-size: 70px;
+    font-family: "BankGothic RUSS Medium";
+    font-weight: 400;
+    font-style: normal;
+}
+.timeline_item
+{
+    margin-bottom: 3rem;
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+.progress_left
+{
+    padding-right: 1rem;
+}
+
+
+.progres_item
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.progress_bar
+{
+    
+    width: 139px;
+    height: 6px;
+    border-radius: 20px;
+    border: 2px solid #0039A6;
+    background-color: white;
+}
+.progress_pro
+{
+    height: 100%;
+    background-color: #0039A6;
+    transition: width .2s linear;
+}

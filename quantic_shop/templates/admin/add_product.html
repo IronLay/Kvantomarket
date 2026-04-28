@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content%}
+
+    <div class="conteiner font">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <h1 class="font text-center mb-4">Добавление товара</h1>
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="id_name" class="form-label">Название товара</label>
+                                <div class="w-100"></div>
+                                {{ form.name }}
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_description" class="form-label">Описание товара</label>
+                                <div class="w-100"></div>
+                                {{ form.description }}
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_price" class="form-label">Цена</label>
+                                <div class="w-100"></div>
+                                {{ form.price }}
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_quantity" class="form-label">Количество</label>
+                                <div class="w-100"></div>
+                                {{ form.quantity }}
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_image" class="form-label">Изображение</label>
+                                <div class="w-100"></div>
+                                {{ form.image }}
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-block">Добавить</button>
+                                <a href="{% url 'product_list' %}" class="btn btn-secondary btn-block">Отмена</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}{% endblock %}

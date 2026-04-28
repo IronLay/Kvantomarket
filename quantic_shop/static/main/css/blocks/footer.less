@@ -1,0 +1,76 @@
+//main: ../style.less
+
+.footer
+{
+    background-color: #0039A6;
+    padding: 25px 0;
+}
+
+.footer_inner
+{
+    display: flex;
+    justify-content: space-between;
+}
+.footer_cooperate
+{
+    
+    font-size: 15px;
+    color: white;
+    font-family: "BankGothic RUSS Medium";
+    font-weight: 600;
+    font-style: normal;
+}
+.footer_nav_link
+{
+    font-size: 15px;
+    margin-left: 2rem;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+
+    //border: 2px solid transparent;
+    //border-radius: 20px;
+
+    &:after
+    {
+        content: "";
+        width: 0;
+        height: 2px;
+        background-color: white;
+
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        z-index: 1;
+        transition: width .2s linear;
+    }
+
+
+    &:hover:not(.nav_link--btn)
+    {
+        &:after{
+            width: 100%;
+           }
+
+    }
+       
+    
+
+    &--btn
+    {
+        padding: 10px 30px;
+        border: 2px solid @white;
+
+        border-radius: 20px;
+
+        transition: background-color .2s linear, color .2s linear;
+
+        &:hover
+        {
+            background-color: white;
+            color: #0039A6;
+        }
+    }
+}

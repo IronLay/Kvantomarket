@@ -1,0 +1,65 @@
+//main: ../style.less
+
+.nav
+{
+    align-items: center;
+    font-family: "BankGothic RUSS Medium";
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    height: 100%;
+}
+.nav_link
+{
+    
+    margin-left: 2rem;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: @black;
+    text-decoration: none;
+
+    //border: 2px solid transparent;
+    //border-radius: 20px;
+
+    &:after
+    {
+        content: "";
+        width: 0;
+        height: 2px;
+        background-color: @black;
+
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        z-index: 1;
+        transition: width .2s linear;
+    }
+
+
+    &:hover:not(.nav_link--btn)
+    {
+        &:after{
+            width: 100%;
+           }
+
+    }
+       
+    
+
+    &--btn
+    {
+        padding: 10px 30px;
+        border: 2px solid @black;
+
+        border-radius: 20px;
+
+        transition: background-color .2s linear, color .2s linear;
+
+        &:hover
+        {
+            background-color: black;
+            color: white;
+        }
+    }
+}

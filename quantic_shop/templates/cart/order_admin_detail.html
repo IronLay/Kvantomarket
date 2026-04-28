@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Заказ #{{ order.id }}</h2>
+    <p>Пользователь: {{ order.user.username }}</p>
+    <p>Дата: {{ order.created_at|date:"d.m.Y H:i" }}</p>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Товар</th>
+                <th>Количество</th>
+                <th>Цена</th>
+                <th>Итого</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in order.items.all %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price }} квантиков</td>
+                <td>{{ item.price|mul:item.quantity }} квантиков</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="3">Общая сумма:</th>
+                <th>{{ order.total_price }} квантиков</th>
+            </tr>
+        </tfoot>
+    </table>
+    
+    {% if not order.is_completed %}
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">Отметить как выполненный</button>
+    </form>
+    {% endif %}
+    
+    <a href="{% url 'order_list' %}" class="btn btn-primary mt-3">Вернуться к списку</a>
+</div>
+{% endblock %}
+{% block footer %}{% endblock %}

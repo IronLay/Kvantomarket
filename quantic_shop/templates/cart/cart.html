@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cart %}{% endblock%}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Ваша корзина    Баланс: {{ balance }} кв.</h2>
+
+    {% if cart.items.all %}
+    <form method="post" action="{% url 'update_cart' %}">
+        {% csrf_token %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Товар</th>
+                    <th>Количество</th>
+                    <th>Цена</th>
+                    <th>Итого</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart.items.all %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>
+                        <input type="number" name="quantity_{{ item.id }}"
+                               value="{{ item.quantity }}" min="1"
+                               max="{{ item.product.quantity }}"
+                               class="form-control" style="width: 70px;">
+                        <small class="text-muted">Доступно: {{ item.product.quantity }}</small>
+                    </td>
+                    <td>{{ item.product.price }} квантиков</td>
+                    <td>{{ item.total_price }} квантиков</td>
+                    <td>
+                        <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-sm btn-outline-danger">Удалить</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" class="text-end">
+                        <button type="submit" class="btn btn-outline-primary me-2">Обновить корзину</button>
+                        <a href="{% url 'checkout' %}" class="btn btn-primary">Оформить заказ</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="3">Общая сумма:</th>
+                    <th colspan="2">{{ cart.total_price }} квантиков</th>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+    {% else %}
+    <div class="alert alert-info">
+        Ваша корзина пуста. <a href="{% url 'home' %}">Начните покупки</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+{% block footer %}{% endblock %}

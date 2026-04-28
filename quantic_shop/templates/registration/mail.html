@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение почты</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b2838;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: linear-gradient(135deg, #2a475e, #1b2838);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #66c0f4;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #c7d5e0;
+        }
+
+        .code-container {
+            background-color: #171a21;
+            padding: 1rem;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .code {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            user-select: none;
+        }
+
+        .copy-icon {
+            width: 20px;
+            height: 20px;
+            fill: #66c0f4;
+            transition: transform 0.3s ease;
+        }
+
+        .code-container.copied .copy-icon {
+            transform: scale(1.2);
+            fill: #4CAF50;
+        }
+
+        .footer {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #8f98a0;
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Подтверждение почты</h1>
+        <p>Для завершения регистрации введите следующий код подтверждения:</p>
+        <div class="code-container" id="codeContainer">
+            <span class="code" id="confirmationCode">{{ confirmation_code }}</span>
+        </div>
+    </div>
+</body>
+</html>

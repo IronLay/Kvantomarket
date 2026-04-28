@@ -1,0 +1,57 @@
+//main: ../style.less
+
+.porfolio
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0.5rem;
+    margin-bottom: 2.8rem;
+}
+
+.portfolio_col
+{
+    flex-basis: 33.333%;
+    padding: 1rem;
+}
+.pi_image
+{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.portfolio_item
+{
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow:  0 0 4px fade(black, 25%);
+    transition: box-shadow .2s linear;
+    &:hover{
+        box-shadow:  0 0 25px fade(black, 25%);
+    }
+}
+
+.portfolio_item_content
+{
+    padding: 0.8rem;
+}
+.pic_category
+{
+    font-size: 12px;
+    color: fade(@black, 65%);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: "Cactus Classical Serif", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.pic_title
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: black;
+    text-transform: uppercase;
+    font-family: "BankGothic RUSS Medium";
+    font-weight: 600;
+    font-style: normal;
+}

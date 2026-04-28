@@ -1,0 +1,81 @@
+//main: ../style.less
+
+.contact
+{
+    display: flex;
+}
+
+.contact_left
+{
+    width: 47%;
+    padding: 2rem;
+}
+.contact_right
+{
+    width: 53%;
+    background-color: @lightblue;
+}
+.contact_title
+{
+    font-size: 70px;
+    font-family: "Parisienne", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.modal_subtitle
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+.contact_info
+{
+    margin: 2rem 0 3rem;
+    padding-left: 1rem;
+}
+.contact_info_i
+{
+    margin-bottom: 0.5rem;
+
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+
+}
+
+.label
+{
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.input, textarea
+{
+    display: block;
+    width: 100%;
+    border: 2px solid @black;
+    border-radius: 20px;
+    padding: 1.2rem 1.8rem;
+    transition: border .2s linear;
+    font-family: inherit;
+    &:focus
+    {
+        outline: 0;
+        border:2px solid #0039A6;
+    }
+
+
+}
+.textarea
+{
+    height: 200px;
+    resize: none;
+}
+
+.form_group
+{
+    margin-bottom: 2rem;
+    resize: none;
+}

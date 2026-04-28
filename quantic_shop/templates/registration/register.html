@@ -1,0 +1,89 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block reg_auth %}<a href="{% url 'home' %}" class="nav_link nav_link--btn font">Квантомаркет</a>{% endblock %}
+{% block content%}
+
+    <div class="conteiner">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <h1 class="font text-center mb-4">Регистрация</h1>
+                        <form method="post" action="{% url 'register' %}">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="username" class="form-label font">Логин</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                                {% if form.username.errors %}
+                                    <div class="text-danger">{{ form.username.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label font">Эл.Почта</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                {% if form.email.errors %}
+                                    <div class="text-danger">{{ form.email.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="mb-3">
+                                <label for="first_name" class="form-label font">Имя</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name" required>
+                                {% if form.first_name.errors %}
+                                    <div class="text-danger">{{ form.first_name.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="mb-3">
+                                <label for="last_name" class="form-label font">Фамилия</label>
+                                <input type="text" class="form-control" id="last_name" name="last_name" required>
+                                {% if form.last_name.errors %}
+                                    <div class="text-danger">{{ form.last_name.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="mb-3">
+                                <label for="age" class="form-label font">Возраст</label>
+                                <input type="number" class="form-control" id="age" name="age" required>
+                                {% if form.age.errors %}
+                                    <div class="text-danger">{{ form.age.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="mb-3">
+                                <label for="kvantum" class="form-label font">Квантум</label>
+                                <select class="form-control" id="kvantum" name="kvantum" required>
+                                    <option value="">Выберите квантум</option>
+                                    <option value="IT">IT-Квантум</option>
+                                    <option value="HI">Хайтек</option>
+                                    <option value="VRAR">VR/AR-Квантум</option>
+                                    <option value="ENRG">Энерджиквантум</option>
+                                    <option value="NANO">Наноквантум</option>
+                                    <option value="ROBOT">Промробоквантум</option>
+                                </select>
+                                {% if form.kvantum.errors %}
+                                    <div class="text-danger">{{ form.kvantum.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="mb-3">
+                                <label for="password1" class="form-label font">Пароль</label>
+                                <input type="password" class="form-control" id="password1" name="password1" required>
+                                {% if form.password1.errors %}
+                                    <div class="text-danger">{{ form.password1.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="mb-3">
+                                <label for="password2" class="form-label font">Повторите пароль</label>
+                                <input type="password" class="form-control" id="password2" name="password2" required>
+                                {% if form.password2.errors %}
+                                    <div class="text-danger">{{ form.password2.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-block">Зарегистрироваться</button>
+                                <a class="btn btn-outline-secondary btn-block" href="{% url 'login' %}">Уже есть аккаунт? Войти</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}{% endblock %}

@@ -1,0 +1,41 @@
+@import "vars";
+
+body{
+    margin: 0 px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 16 px;
+
+    &.no-scroll
+    {
+        overflow: hidden;
+    }
+    
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+/*Blocks*/
+@import "blocks/conteiner.less";
+@import "blocks/header.less";
+@import "blocks/user.less";
+@import "blocks/nav.less";
+@import "blocks/intro.less";
+@import "blocks/social.less";
+@import "blocks/btn.less";
+@import "blocks/works.less";
+@import "blocks/portfolio.less";
+@import "blocks/about.less";
+@import "blocks/helpers.less";
+@import "blocks/rewies.less";
+@import "blocks/price.less";
+@import "blocks/footer.less";
+@import "blocks/modals.less";
+@import "blocks/timeline.less";
+@import "blocks/content.less";

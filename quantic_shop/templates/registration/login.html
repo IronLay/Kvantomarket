@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block reg_auth %}<a href="{% url 'home' %}" class="nav_link nav_link--btn font">Квантомаркет</a>{% endblock %}
+{% block content%}
+    <div class="conteiner">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <h1 class="font text-center mb-4">Вход</h1>
+                        <form method="post" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="username" class="form-label font">Логин</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label font">Пароль</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-block">Войти</button>
+                                <a class="btn btn-outline-secondary btn-block" href="{% url 'register' %}">Нет аккаунта? Зарегистрируйтесь</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}{% endblock %}
